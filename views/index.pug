@@ -1,0 +1,81 @@
+doctype html
+html
+    head
+        title Live Chat
+        // Rainbow API
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.0.5/es6-promise.min.js")
+        script(src="https://code.jquery.com/jquery-2.1.3.min.js" integrity="sha256-ivk71nXhz9nsyFDoYoGf2sbjrR9ddh+XDkCcfZxjvcM=" crossorigin="anonymous")
+        script(src="https://cdn.jsdelivr.net/momentjs/2.15.1/moment-with-locales.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js")
+        script(src="./Scripts/vendors-sdk.min.js")
+        script(src="./Scripts/rainbow-sdk.min.js")
+        // end Rainbow API
+        // WebChat
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js")
+        script(src="/chat-window.js" type="text/javascript")
+        script(src="/chat.js")
+        script(src="/Scripts/validarut.js")
+        link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700")
+        link(rel="stylesheet" href="/chat.css")
+    body
+        div(id="sidebar" hidden)
+            button(id="btnFaq") Preguntas Frecuentes
+            button(id="btnDemos" style="display:none") DEMOS
+        div(id="webchat")
+            header(class="clearfix")
+                h4(id="chat-title")
+                    img(src="/images/Chat-2-icon.png" style="display:inline")
+            div(class="chat" style="display:none")
+                div(id="start-chat")
+                    img(src="./images/ebdlogo.png" width='80px' style="display:block;margin:auto;")
+                    p(class="chat-intro-message") Bienvenido a la asistencia en línea de eBD
+                    p(class="chat-intro-message") Para comenzar ingrese sus datos.
+                    input(class="login_data" placeholder="Nombre" id="nombre")
+                    input(class="login_data" placeholder="Apellido" id="apellido")
+                    input(class="login_data" placeholder="Email (opcional)" id="email")
+                    button(type="button" id="btnAsistencia") Asistencia Online
+                div(id="chat-started" hidden)
+                    div(id="chat-history")
+                    div(id="message-input-container")
+                        textarea(id="message-input-box" placeholder="Escriba su mensaje...")
+                div(id="videollamada" hidden)
+                    div(id="iniciarLlamado" )
+                        h2 Llamada entrante
+                        img(id="callIcon" src="./images/telefone-iocone.png" width='120px' style="animation:shake 0.5s;animation-iteration-count:infinite; display:block; margin-top:20px; margin:auto;")
+                        h3(id="nombreAgente" style="text-align:center")
+                        button(id="btnContestar") Contestar
+                        button(id="btnRechazar") Rechazar
+                    video(id="minivideo" autoplay muted style="display:none;" )
+                    video(id="largevideo" autoplay style="display:none;")
+                    video(id="globalVideoTag" autoplay style="display:none;")
+                    audio(id="globalAudioTag" autoplay style="display:none;")
+        div(id="preguntas-frecuentes" hidden)
+            h2(style="text-align: center") Preguntas Generales
+            each preg in preguntas.length ? preguntas:['No hay preguntas publicadas']
+                if preg.tipo=='general'
+                    button(id=preg.id class="btnPregunta")= preg.pregunta
+            h2(style="text-align: center") Área Comercial
+            each preg in preguntas.length ? preguntas:['No hay preguntas publicadas']
+                if preg.tipo=='comercial'
+                    button(id=preg.id class="btnPregunta")= preg.pregunta
+        each preg in preguntas.length ? preguntas:['No hay preguntas publicadas']    
+            div(class="div-respuesta" id='div'+preg.id hidden) 
+                .innerPregunta
+                    div(class="btnAtrasRespuesta" style="padding-right:10px;border-radius:12px; display: inline")
+                        <img style="margin-right:0px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACJSURBVGhD7dgxDoMwEERR98lB4A7pAvc/BtASpYZZgRsk19kh/0kjWe5+uwUAAAC30Gnv4+krIibtqw3x4ahGbOcsY64RdYv20Cy0Ij7aS7NARBZEZEFEFkRkcpuQQExWrZhVI+aXiMmq14jJqBUza0/NyjUmjg+jZqnGWEdUEWN/oAMAAPg/pexmbIoH8PeRnwAAAABJRU5ErkJggg==">
+                        <p style="display:inline">Volver</p>
+                    h2= preg.pregunta
+                    p !{preg.respuesta}
+        
+        div(id="demos" hidden)
+            h2(style="text-align:center; margin-bottom: 0px;") REST API
+            p(style="padding-left:10px;padding-right:10px; text-align:justify") Podemos consultar webservices o APIS del cliente o públicas para entregar información relevante.
+            button(class="btnDemo" id="btnclima") ¿Puedes darme el pronóstico climático?
+            button(class="btnDemo" id="btnindicadores") Indicadores Económicos
+            h2(style="text-align:center; margin-bottom: 0px;") Callback
+            p(style="padding-left:10px;padding-right:10px; text-align:justify") Utilizando la capacidad de Rainbow de tomar el control de un teléfono físico, se puede implementar un sistema de callback.
+            button(class="btnDemo" id="btncallback") Llámenme!
+            h2(style="text-align:center; margin-bottom: 0px;") Consultas BBDD
+            p(style="padding-left:10px;padding-right:10px; text-align:justify") Es también posible conectarse a bases de datos de diversa índole para devolver al usuario información sobre el estado de su pedido, orden de compra, ticket, reservación o cualquier información relevante.
+            button(class="btnDemo" id="btnbbdd") Consultas Base de Datos

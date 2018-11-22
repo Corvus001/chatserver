@@ -1,0 +1,23 @@
+{
+  "name": "rainbow-chat",
+  "version": "1.0.0",
+  "description": "Web Chat Server using OpenRainbow API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cristopher Rosales",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^2.3.1",
+    "cors": "^2.8.4",
+    "dialogflow": "^0.6.0",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "mongoose": "^5.2.5",
+    "pug": "^2.0.3",
+    "rainbow-node-sdk": "~1.42.3",
+    "socket.io": "~2.1.1"
+  }
+}
