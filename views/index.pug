@@ -19,9 +19,9 @@ html
         link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700")
         link(rel="stylesheet" href="/chat.css")
     body
-        div(id="sidebar" hidden)
-            button(id="btnFaq") Preguntas Frecuentes
-            button(id="btnDemos" style="display:none") DEMOS
+        //- div(id="sidebar" hidden)
+        //-     button(id="btnFaq") Preguntas Frecuentes
+        //-     button(id="btnDemos" style="display:none") DEMOS
         div(id="webchat")
             header(class="clearfix")
                 h4(id="chat-title")
@@ -29,12 +29,12 @@ html
             div(class="chat" style="display:none")
                 div(id="start-chat")
                     img(src="./images/ebdlogo.png" width='80px' style="display:block;margin:auto;")
-                    p(class="chat-intro-message") Bienvenido a la asistencia en línea de eBD
-                    p(class="chat-intro-message") Para comenzar ingrese sus datos.
+                    p(class="chat-intro-message") Hola!, por este medio puedes contactarme!
+                    p(class="chat-intro-message") Ingresa tus datos y te atenderá un Chatbot!
                     input(class="login_data" placeholder="Nombre" id="nombre")
                     input(class="login_data" placeholder="Apellido" id="apellido")
                     input(class="login_data" placeholder="Email (opcional)" id="email")
-                    button(type="button" id="btnAsistencia") Asistencia Online
+                    button(type="button" id="btnAsistencia") Iniciar Chat
                 div(id="chat-started" hidden)
                     div(id="chat-history")
                     div(id="message-input-container")
@@ -50,23 +50,23 @@ html
                     video(id="largevideo" autoplay style="display:none;")
                     video(id="globalVideoTag" autoplay style="display:none;")
                     audio(id="globalAudioTag" autoplay style="display:none;")
-        div(id="preguntas-frecuentes" hidden)
-            h2(style="text-align: center") Preguntas Generales
-            each preg in preguntas.length ? preguntas:['No hay preguntas publicadas']
-                if preg.tipo=='general'
-                    button(id=preg.id class="btnPregunta")= preg.pregunta
-            h2(style="text-align: center") Área Comercial
-            each preg in preguntas.length ? preguntas:['No hay preguntas publicadas']
-                if preg.tipo=='comercial'
-                    button(id=preg.id class="btnPregunta")= preg.pregunta
-        each preg in preguntas.length ? preguntas:['No hay preguntas publicadas']    
-            div(class="div-respuesta" id='div'+preg.id hidden) 
-                .innerPregunta
-                    div(class="btnAtrasRespuesta" style="padding-right:10px;border-radius:12px; display: inline")
-                        <img style="margin-right:0px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACJSURBVGhD7dgxDoMwEERR98lB4A7pAvc/BtASpYZZgRsk19kh/0kjWe5+uwUAAAC30Gnv4+krIibtqw3x4ahGbOcsY64RdYv20Cy0Ij7aS7NARBZEZEFEFkRkcpuQQExWrZhVI+aXiMmq14jJqBUza0/NyjUmjg+jZqnGWEdUEWN/oAMAAPg/pexmbIoH8PeRnwAAAABJRU5ErkJggg==">
-                        <p style="display:inline">Volver</p>
-                    h2= preg.pregunta
-                    p !{preg.respuesta}
+        //- div(id="preguntas-frecuentes" hidden)
+        //-     h2(style="text-align: center") Preguntas Generales
+        //-     each preg in preguntas.length ? preguntas:['No hay preguntas publicadas']
+        //-         if preg.tipo=='general'
+        //-             button(id=preg.id class="btnPregunta")= preg.pregunta
+        //-     h2(style="text-align: center") Área Comercial
+        //-     each preg in preguntas.length ? preguntas:['No hay preguntas publicadas']
+        //-         if preg.tipo=='comercial'
+        //-             button(id=preg.id class="btnPregunta")= preg.pregunta
+        //- each preg in preguntas.length ? preguntas:['No hay preguntas publicadas']    
+        //-     div(class="div-respuesta" id='div'+preg.id hidden) 
+        //-         .innerPregunta
+        //-             div(class="btnAtrasRespuesta" style="padding-right:10px;border-radius:12px; display: inline")
+        //-                 <img style="margin-right:0px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACJSURBVGhD7dgxDoMwEERR98lB4A7pAvc/BtASpYZZgRsk19kh/0kjWe5+uwUAAAC30Gnv4+krIibtqw3x4ahGbOcsY64RdYv20Cy0Ij7aS7NARBZEZEFEFkRkcpuQQExWrZhVI+aXiMmq14jJqBUza0/NyjUmjg+jZqnGWEdUEWN/oAMAAPg/pexmbIoH8PeRnwAAAABJRU5ErkJggg==">
+        //-                 <p style="display:inline">Volver</p>
+        //-             h2= preg.pregunta
+        //-             p !{preg.respuesta}
         
         div(id="demos" hidden)
             h2(style="text-align:center; margin-bottom: 0px;") REST API

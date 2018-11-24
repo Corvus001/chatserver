@@ -16,9 +16,9 @@ $(document).ready(function() {
 			if (parentWidth>360) {
 				$('#webchat').animate({width: '365px'}, function() {
 					$('#chat-history').css({ height: parentHeight*0.66-140});
-					$("#chat-title").append('<span id="text-title">Asistencia eBD</span>');
-					$("#chat-title").append('<a id="facebook-link-header" class="header-social-img" href="https://www.facebook.com/ebdchile/" target="_blank" rel="noopener noreferrer"><img src="./images/facebook.png" alt="facebook" width="30" height="30"></a>');
-					$("#chat-title").append('<a id="twitter-link-header" class="header-social-img" href="https://twitter.com/ebdchile" target="_blank" rel="noopener noreferrer"><img src="./images/twitter.png" alt="twitter" width="30" height="30"></a>');
+					$("#chat-title").append('<span id="text-title">Contacto</span>');
+					$("#chat-title").append('<a id="facebook-link-header" class="header-social-img" href="https://www.facebook.com/D43D41U5" target="_blank" rel="noopener noreferrer"><img src="./images/facebook.png" alt="facebook" width="30" height="30"></a>');
+					$("#chat-title").append('<a id="twitter-link-header" class="header-social-img" href="https://twitter.com/CrstophrRosales" target="_blank" rel="noopener noreferrer"><img src="./images/twitter.png" alt="twitter" width="30" height="30"></a>');
 					$("#chat-title").append('<a id="linkedin-link-header" class="header-social-img" href="https://www.linkedin.com/company/ebdchile" target="_blank" rel="noopener noreferrer"><img src="./images/linkedin.png" alt="linkedin" width="30" height="30"></a>');
 					$('.chat').slideToggle(500, 'swing');		
 				});
@@ -28,7 +28,7 @@ $(document).ready(function() {
 					$("#chat-title").append('<span id="text-title">Asistencia eBD</span>');
 					$("#chat-title").append('<a id="facebook-link-header" class="header-social-img" href="https://www.facebook.com/ebdchile/" target="_blank" rel="noopener noreferrer"><img src="./images/facebook.png" alt="facebook" width="30" height="30"></a>');
 					$("#chat-title").append('<a id="twitter-link-header" class="header-social-img" href="https://twitter.com/ebdchile" target="_blank" rel="noopener noreferrer"><img src="./images/twitter.png" alt="twitter" width="30" height="30"></a>');
-					$("#chat-title").append('<a id="linkedin-link-header" class="header-social-img" href="https://www.linkedin.com/company/ebdchile" target="_blank" rel="noopener noreferrer"><img src="./images/linkedin.png" alt="linkedin" width="30" height="30"></a>');
+					$("#chat-title").append('<a id="linkedin-link-header" class="header-social-img" href="https://www.linkedin.com/in/cristopher-rosales-4815b7154" target="_blank" rel="noopener noreferrer"><img src="./images/linkedin.png" alt="linkedin" width="30" height="30"></a>');
 					$('.chat').slideToggle(500, 'swing');		
 				});
 			}

@@ -121,8 +121,8 @@ $( document ).ready(function() {
 	var lastname = "";
 	
 	// Make connection
-//	var socket = io.connect('http://138.197.203.105:4000');
-	var socket = io.connect('https://crosales-chatserver.herokuapp.com');
+	var socket = io.connect('http://localhost:5000');
+//	var socket = io.connect('https://crosales-chatserver.herokuapp.com');
 
 	// Query DOM
 	var message = $('#message-input-box');

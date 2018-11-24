@@ -254,7 +254,7 @@ body {
 /* ---------- Webchat ---------- */
 /* Container for the chat popup */
 #webchat {
-	border: 1px outset #ccc;
+	border: 1px outset #FD5200;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
 	font-size: 12px;
@@ -266,7 +266,7 @@ body {
 }
 /* -------Header-------- */
 #webchat header {
-	background: #286090;
+	background: #FD5200;
 	border-radius: 5px 5px 0 0;
 	color: #fff;
 	cursor: pointer;
